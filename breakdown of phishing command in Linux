@@ -1,0 +1,28 @@
+nano email.eml(
+nano is a simple, beginner-friendly text editor used in the Linux terminal.
+.eml file is: An email message file format)
+
+cat phishing_sample.eml(
+cat is used for Display the contents of a file in the terminal)
+
+
+echo " EMAIL HEADER ANALYSIS " > analysis.txt(
+echo is a Linux command used to print text to the screen or write text into a file.)
+
+echo "Sender Information:" >> analysis.txt
+
+grep -i "from:\|reply-to:" email.eml >> analysis.txt(
+grep: searches for text patterns inside files.
+-i makes the search case-insensitive, meaning it matches FROM, From, from, etc.)
+
+echo "" >> analysis.txt
+
+echo "Subject Line:" >> analysis.txt
+
+grep -i "subject:" email.eml >> analysis.txt
+
+echo "" >> analysis.txt
+
+echo "All URLs Found:" >> analysis.txt
+
+grep -o 'http[s]\?://[^"<>()[:space:]]*' email.eml >> analysis.txt
